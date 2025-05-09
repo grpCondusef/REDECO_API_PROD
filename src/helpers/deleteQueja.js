@@ -11,7 +11,7 @@ export const deleteQueja = async (request, response) => {
     })
   }
 
-  const mesActual = new Date().getMonth()+1; // Sumar 1 porque los meses van de 0 a 11
+  const mesActual = new Date().getMonth(); // Sumar 1 porque los meses van de 0 a 11
   //const mesActual = 12; // Sumar 1 porque los meses van de 0 a 11
   
   try {

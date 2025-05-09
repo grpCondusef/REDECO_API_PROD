@@ -1077,6 +1077,7 @@ export const getExistAcuseDelete = async (institucionClave) => {
   try {
     const currentYear = new Date().getFullYear(); // Obtener el año actual
     const mesActual = new Date().getMonth();
+    console.log(mesActual)
 
     const acuseQuery = await pool.execute(
       `
@@ -1084,7 +1085,8 @@ export const getExistAcuseDelete = async (institucionClave) => {
       FROM REDECO.ENCABEZADO
       WHERE ANIOID = :currentYear AND INSTITUCIONCLAVE = :institucionClave AND ENCTRIMESTRE = :mesActual
       `,
-      [currentYear,  institucionClave, mesActual]
+      [currentYear,  institucionClave, mesActual],
+      console.log(acuseQuery)
     );
 
     // Asegúrate de manejar el caso en que no haya resultados
